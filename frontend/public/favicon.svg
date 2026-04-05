@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1a1d27"/>
+  <!-- candle 1 — verde -->
+  <line x1="7" y1="5" x2="7" y2="8" stroke="#26c281" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="4.5" y="8" width="5" height="9" rx="1" fill="#26c281"/>
+  <line x1="7" y1="17" x2="7" y2="21" stroke="#26c281" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- candle 2 — vermelho -->
+  <line x1="16" y1="8" x2="16" y2="11" stroke="#e74c5e" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="13.5" y="11" width="5" height="7" rx="1" fill="#e74c5e"/>
+  <line x1="16" y1="18" x2="16" y2="22" stroke="#e74c5e" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- candle 3 — verde -->
+  <line x1="25" y1="10" x2="25" y2="13" stroke="#26c281" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="22.5" y="13" width="5" height="10" rx="1" fill="#26c281"/>
+  <line x1="25" y1="23" x2="25" y2="26" stroke="#26c281" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
