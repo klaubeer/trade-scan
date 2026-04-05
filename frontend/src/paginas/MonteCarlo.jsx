@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine, ResponsiveContainer } from 'recharts'
 import api from '../api.js'
 
 export default function MonteCarlo() {
+  const [searchParams] = useSearchParams()
   const [runs, setRuns] = useState([])
-  const [form, setForm] = useState({ run_id: '', n_simulacoes: 1000 })
+  const [form, setForm] = useState({ run_id: searchParams.get('run_id') || '', n_simulacoes: 1000 })
   const [carregando, setCarregando] = useState(false)
   const [resultado, setResultado] = useState(null)
   const [erro, setErro] = useState(null)
