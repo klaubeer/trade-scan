@@ -72,7 +72,15 @@ export default function Ingestao() {
         </div>
 
         <div className="card">
-          <h2 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16 }}>Dados Disponíveis</h2>
+          <h2 style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>Dados Disponíveis</h2>
+          {disponiveis.length > 0 && (
+            <div style={{ fontSize: 12, color: 'var(--text2)', marginBottom: 16 }}>
+              Profit · já importado até{' '}
+              <span style={{ color: 'var(--green)', fontWeight: 600 }}>
+                {disponiveis.reduce((max, d) => d.fim > max ? d.fim : max, '')}
+              </span>
+            </div>
+          )}
           {disponiveis.length === 0 ? (
             <p style={{ color: 'var(--text2)' }}>Nenhum dado importado ainda.</p>
           ) : (

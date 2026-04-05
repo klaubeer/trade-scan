@@ -27,9 +27,12 @@ export default function Backtesting() {
   const [cnnThreshold, setCnnThreshold] = useState(0.5)
   const [contratos, setContratos] = useState(1)
 
+  const [disponiveis, setDisponiveis] = useState([])
+
   useEffect(() => {
     api.get('/setups').then(r => setSetups(r.data)).catch(() => {})
     api.get('/cnn/modelos').then(r => setModelosCNN(r.data)).catch(() => {})
+    api.get('/ingestao/disponivel').then(r => setDisponiveis(r.data)).catch(() => {})
   }, [])
 
   function campo(key) {
@@ -63,6 +66,10 @@ export default function Backtesting() {
 
   const VALOR_PT = { WIN: 0.20, WDO: 10.00, BITFUT: 1.00 }
   const setupSelecionado = setups.find(s => String(s.id) === String(form.setup_id))
+
+  const dadoDisponivel = setupSelecionado
+    ? disponiveis.find(d => d.ticker === setupSelecionado.ticker && d.timeframe === setupSelecionado.params?.timeframe)
+    : null
   const valorPtBase = VALOR_PT[setupSelecionado?.ticker] ?? 0.20
   const valorPtTotal = valorPtBase * contratos
 
@@ -93,6 +100,15 @@ export default function Backtesting() {
               </select>
             </div>
           </div>
+          {dadoDisponivel && (
+            <div style={{ marginTop: 8, fontSize: 12, color: 'var(--text2)' }}>
+              Profit ({setupSelecionado.ticker} {dadoDisponivel.timeframe}) · já importado:{' '}
+              <span style={{ color: 'var(--text)' }}>
+                {dadoDisponivel.inicio} → {dadoDisponivel.fim}
+              </span>
+              {' '}· {dadoDisponivel.total_candles.toLocaleString('pt-BR')} candles
+            </div>
+          )}
           {/* Filtro CNN */}
           <div style={{ marginTop: 16, padding: '12px 16px', background: 'var(--bg2)',
             border: '1px solid var(--border)', borderRadius: 'var(--radius)' }}>
