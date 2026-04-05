@@ -6,7 +6,6 @@ import Backtesting from './paginas/Backtesting.jsx'
 import Comparativo from './paginas/Comparativo.jsx'
 import WalkForward from './paginas/WalkForward.jsx'
 import MonteCarlo from './paginas/MonteCarlo.jsx'
-import Agente from './paginas/Agente.jsx'
 import CNNPadroes from './paginas/CNNPadroes.jsx'
 import Historico from './paginas/Historico.jsx'
 
@@ -18,7 +17,6 @@ const nav = [
   { to: '/comparativo',  label: 'Comparativo' },
   { to: '/walk-forward', label: 'Walk-Forward' },
   { to: '/monte-carlo',  label: 'Monte Carlo' },
-  { to: '/agente',       label: 'IA' },
   { to: '/cnn-padroes',  label: 'CNN' },
 ]
 
@@ -60,7 +58,6 @@ export default function App() {
             <Route path="/walk-forward" element={<WalkForward />} />
             <Route path="/monte-carlo"  element={<MonteCarlo />} />
             <Route path="/historico"    element={<Historico />} />
-            <Route path="/agente"       element={<Agente />} />
             <Route path="/cnn-padroes"  element={<CNNPadroes />} />
           </Routes>
         </main>

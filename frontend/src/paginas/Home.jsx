@@ -51,13 +51,6 @@ const FEATURES = [
     cor: 'var(--red)',
   },
   {
-    icon: '🤖',
-    nome: 'Agente IA',
-    descricao: 'Análise em linguagem natural dos resultados via Claude AI. Identifica edge, pontos fracos e sugere melhorias.',
-    rota: '/agente',
-    cor: 'var(--blue)',
-  },
-  {
     icon: '🧠',
     nome: 'CNN — Padrões',
     descricao: 'Treina um modelo de deep learning sobre os candles antes de entradas históricas para filtrar sinais futuros.',
