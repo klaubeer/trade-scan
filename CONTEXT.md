@@ -2,10 +2,10 @@
 
 ## STATUS GERAL DO PROJETO
 
-- **Fase atual:** DESENVOLVIMENTO
-- **Milestone atual:** Implementação completa — todas as features planejadas entregues
-- **Última decisão relevante:** ADX(14) + ATR diário adicionados como filtros opcionais de qualidade de sinal; `horario_fechamento` separado de `horario_fim`; detecção bilateral de sequências (long/short) corrigida; módulo CNN 1D entregue
-- **Próximo passo:** Teste do usuário com filtros ADX/ATR no Fischer-Hat-Trick (meta: Win Rate 31% → 38%, Fator de Lucro 1.32 → 1.5)
+- **Fase atual:** PRODUÇÃO
+- **Milestone atual:** App deployado em https://tradescan.klauberfischer.online — pronto para uso com dados reais
+- **Última decisão relevante:** Deploy via Docker + Traefik na VPS klauberfischer.online; nginx com `client_max_body_size 50M` para uploads de CSV; 23 setups de referência seedados (5 scalping × long/short + 5 tendência × long/short + 3 clássicos)
+- **Próximo passo:** Importar CSV do WIN e rodar primeiros backtests com os setups de referência
 
 ---
 
