@@ -110,11 +110,11 @@ export default function MonteCarlo() {
         <form onSubmit={executar}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             <div>
-              <label>Run ID (de um backtest executado)</label>
+              <label>Run ID <span style={{ color: 'var(--text2)', fontWeight: 400 }}>— coluna # do Histórico</span></label>
               <input type="number" required min="1"
                 value={form.run_id}
                 onChange={e => setForm(f => ({ ...f, run_id: e.target.value }))}
-                placeholder="Ex: 1"
+                placeholder="Ex: 11"
               />
             </div>
             <div>

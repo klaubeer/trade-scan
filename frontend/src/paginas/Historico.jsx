@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import api from '../api.js'
 import MetricasGlobais from '../componentes/MetricasGlobais.jsx'
 import EquityCurve from '../componentes/EquityCurve.jsx'
@@ -81,7 +80,6 @@ export default function Historico() {
     }
   }
 
-  const navigate = useNavigate()
   const pos = v => v > 0 ? 'var(--green)' : v < 0 ? 'var(--red)' : 'var(--text)'
 
   return (
@@ -174,14 +172,6 @@ export default function Historico() {
                     }
                   </td>
                   <td onClick={e => e.stopPropagation()} style={{ whiteSpace: 'nowrap', display: 'flex', gap: 6, alignItems: 'center' }}>
-                    <button
-                      className="secundario"
-                      style={{ padding: '4px 10px', fontSize: 12 }}
-                      onClick={() => navigate(`/monte-carlo?run_id=${run.run_id}`)}
-                      title="Abrir no Monte Carlo"
-                    >
-                      🎲 MC
-                    </button>
                     {run.sample_type === 'in_sample' && !run.aprovado && (
                       <button
                         className="secundario"
