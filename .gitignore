@@ -1,8 +1,22 @@
+# Secrets e ambiente
 .env
+.env.prod
+
+# Dados e modelos (gerados em runtime)
 dados/
+models/
+
+# Python
 __pycache__/
+**/__pycache__/
 *.pyc
+*.pyo
 .pytest_cache/
 .ruff_cache/
+
+# Frontend
 frontend/node_modules/
 frontend/dist/
+
+# Claude Code (configurações locais da IDE)
+.claude/
