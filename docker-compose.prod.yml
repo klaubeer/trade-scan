@@ -1,0 +1,46 @@
+services:
+  tradescan-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: tradescan-backend
+    environment:
+      - DB_PATH=/dados/tradescan.db
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CORS_ORIGINS=${CORS_ORIGINS}
+    volumes:
+      - tradescan-dados:/dados
+      - tradescan-models:/app/models
+    expose:
+      - "8000"
+    networks:
+      - proxy
+    restart: unless-stopped
+
+  tradescan-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: tradescan-frontend
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.tradescan.rule=Host(`tradescan.klauberfischer.online`)"
+      - "traefik.http.routers.tradescan.entrypoints=websecure"
+      - "traefik.http.routers.tradescan.tls.certresolver=letsencrypt"
+      - "traefik.http.services.tradescan.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+    networks:
+      - proxy
+    restart: unless-stopped
+    depends_on:
+      - tradescan-backend
+
+volumes:
+  tradescan-dados:
+  tradescan-models:
+
+networks:
+  proxy:
+    external: true

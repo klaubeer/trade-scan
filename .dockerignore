@@ -1,0 +1,14 @@
+frontend/node_modules
+dados/
+models/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.env
+.env.prod
+!.env.prod.example
+.git
+.gitignore
+docs/
+*.md
