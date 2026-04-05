@@ -51,7 +51,12 @@ export default function WalkForward() {
 
   return (
     <div>
-      <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24 }}>Walk-Forward Analysis</h1>
+      <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Walk-Forward Analysis</h1>
+      <p style={{ color: 'var(--text2)', fontSize: 13, lineHeight: 1.7, marginBottom: 24, maxWidth: 720 }}>
+        Divide o histórico em janelas deslizantes: otimiza o setup num período (<em>in-sample</em>) e valida no período seguinte (<em>out-of-sample</em>), repetindo o processo ao longo do tempo.
+        O objetivo é detectar <strong style={{ color: 'var(--text)' }}>overfitting</strong> — se o setup só funciona nos dados em que foi ajustado, o walk-forward vai revelar isso.
+        Uma estratégia robusta mantém resultados consistentes nas janelas de validação.
+      </p>
 
       <div className="card" style={{ marginBottom: 24 }}>
         <form onSubmit={executar}>

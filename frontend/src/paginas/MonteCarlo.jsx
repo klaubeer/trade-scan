@@ -104,7 +104,13 @@ export default function MonteCarlo() {
 
   return (
     <div>
-      <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 24 }}>Monte Carlo Simulation</h1>
+      <h1 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Monte Carlo Simulation</h1>
+      <p style={{ color: 'var(--text2)', fontSize: 13, lineHeight: 1.7, marginBottom: 24, maxWidth: 720 }}>
+        Embaralha e recombina aleatoriamente os trades de um backtest em 1.000+ sequências diferentes para simular cenários alternativos.
+        O resultado mostra a <strong style={{ color: 'var(--text)' }}>distribuição do drawdown máximo</strong> e a banda de confiança da equity curve — respondendo à pergunta:
+        "se os trades tivessem chegado em outra ordem, qual seria o pior cenário possível?"
+        Use para dimensionar capital e definir stop de operações (<em>ruin threshold</em>).
+      </p>
 
       <div className="card" style={{ marginBottom: 24 }}>
         <form onSubmit={executar}>
